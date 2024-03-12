@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: your-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: your-service
+  template:
+    metadata:
+      labels:
+        app: your-service
+    spec:
+      containers:
+        - name: your-service
+          image: kusumitha01/dockerfile:5.0
+          ports:
+            - containerPort: 8080
